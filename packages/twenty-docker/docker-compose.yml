@@ -23,8 +23,8 @@ services:
     environment:
       PORT: 3000
       PG_DATABASE_URL: postgres://${PGUSER_SUPERUSER:-postgres}:${PGPASSWORD_SUPERUSER:-twenty}@${PG_DATABASE_HOST:-db:5432}/default
-      SERVER_URL: ${SERVER_URL}
-      FRONT_BASE_URL: ${FRONT_BASE_URL:-$SERVER_URL}
+      SERVER_URL: ${SERVICE_FQDN_TWENTY}
+      FRONT_BASE_URL: ${SERVICE_FQDN_TWENTY}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
 
       ENABLE_DB_MIGRATIONS: "true"
